@@ -40,7 +40,7 @@ profile aa-install @{exec_path} {
     capability net_admin,
     capability sys_resource,
 
-    signal send set=term peer=systemd-tty-ask-password-agent,
+    signal send set=(cont term) peer=systemd-tty-ask-password-agent,
 
     @{bin}/systemd-tty-ask-password-agent Px,
 

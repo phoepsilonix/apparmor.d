@@ -22,6 +22,9 @@ profile findmnt @{exec_path} flags=(attach_disconnected,complain) {
   /etc/mtab r,
 
   / r,
+  /*/ r,
+  /*/*/ r,
+  /*/*/*/ r,
 
   @{PROC}/@{pids}/mountinfo r,
 

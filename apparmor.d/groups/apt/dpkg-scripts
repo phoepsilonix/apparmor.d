@@ -69,6 +69,7 @@ profile dpkg-scripts @{exec_path} {
   @{sbin}/* w,
   @{lib}/ rw,
   @{lib}/** wl -> @{lib}/**,
+  /opt/*/ rw,
   /opt/*/** rw,
 
   #aa:lint ignore=too-wide

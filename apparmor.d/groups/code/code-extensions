@@ -60,11 +60,10 @@ profile code-extensions @{exec_path} flags=(attach_disconnected) {
 
   @{sys}/devices/system/node/ r,
 
-        @{PROC}/@{pid}/net/if_inet6 r,
-        @{PROC}/@{pid}/net/ipv6_route r,
-        @{PROC}/@{pid}/net/tcp r,
-        @{PROC}/sys/net/core/somaxconn r,
-  owner @{PROC}/@{pid}/coredump_filter rw,
+  @{PROC}/@{pid}/net/if_inet6 r,
+  @{PROC}/@{pid}/net/ipv6_route r,
+  @{PROC}/@{pid}/net/tcp r,
+  @{PROC}/sys/net/core/somaxconn r,
 
   deny owner @{HOME}/ r,
 

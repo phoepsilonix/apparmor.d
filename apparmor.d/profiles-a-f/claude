@@ -41,7 +41,6 @@ profile claude @{exec_path} flags=(attach_disconnected) {
 
   ptrace read peer=claude//*,
 
-  signal send set=term peer=git,
   signal receive set=term peer=code,
 
   unix (send receive) type=stream peer=(label=code),
@@ -169,12 +168,12 @@ profile claude @{exec_path} flags=(attach_disconnected) {
     unix (send receive) type=stream peer=(label=claude-desktop),
 
     signal receive peer=claude,
-
-    priority=1 @{bin}/flatpak     Px -> claude//flatpak,
-    priority=1 @{bin}/git         Px -> claude//git,
-    priority=1 @{bin}/scp         PUx -> claude//ssh,
-    priority=1 @{bin}/ssh         Px -> claude//ssh,
-    priority=1 @{ldd_path}        Px -> claude//ldd,
+  
+    priority=2 @{bin}/flatpak     Px -> claude//flatpak,
+    priority=2 @{bin}/git         Px -> claude//git,
+    priority=2 @{bin}/scp         Px -> claude//ssh,
+    priority=2 @{bin}/ssh         Px -> claude//ssh,
+    priority=2 @{ldd_path}        Px -> claude//ldd,
 
     owner @{HOME}/.claude/{,**} r,
     owner @{HOME}/.claude/* w,
@@ -237,7 +236,7 @@ profile claude @{exec_path} flags=(attach_disconnected) {
     include if exists <local/claude_shell>
   }
 
-  profile git flags=(attach_disconnected,complain) {
+  profile git flags=(attach_disconnected) {
     include <abstractions/base>
     include <abstractions/app/git>
 
@@ -245,12 +244,14 @@ profile claude @{exec_path} flags=(attach_disconnected) {
 
     unix (send receive) type=stream peer=(label=claude),
 
+    @{bin}/gpg{,2}  Px -> git//gpg,
+
     owner @{HOME}/.claude/ r,
     owner @{HOME}/.claude/** rwlk,
 
     owner @{user_config_dirs}/Claude/** rw,
 
-    owner @{user_projects_dirs}/** rw,
+    owner @{user_projects_dirs}/** rwl,
 
     owner @{tmp}/claude{,-*}/ rw,
     owner @{tmp}/claude{,-*}/** rwlk,

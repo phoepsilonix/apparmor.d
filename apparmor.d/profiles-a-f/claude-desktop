@@ -44,7 +44,8 @@ profile claude-desktop @{exec_path} flags=(attach_disconnected) {
 
   owner @{user_config_dirs}/mimeapps.list.@{rand6} rw,
 
-  owner @{tmp}/download-*-@{rand12}.zip rw,
+  owner @{tmp}/claude-*-@{rand6}/{,**} rwlk,
+  owner @{tmp}/download-*-@{word12}.zip rw,
 
   owner @{run}/user/@{uid}/claude-cowork-vm.sock rw,
 

@@ -100,8 +100,7 @@ profile cron-popularity-contest @{exec_path} {
 
     @{log}/popularity-contest.new w,
 
-          @{PROC}/1/limits r,
-    owner @{PROC}/@{pids}/loginuid r,
+    @{PROC}/1/limits r,
 
     owner @{tmp}/#@{int} rw,  # file_inherit
 

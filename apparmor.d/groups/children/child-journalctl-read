@@ -14,6 +14,8 @@ profile child-journalctl-read flags=(attach_disconnected) {
 
   capability sys_resource,
 
+  unix (send receive) type=stream,
+
   @{bin}/journalctl mr,
 
   include if exists <local/child-journalctl-read>

@@ -67,7 +67,7 @@ profile unattended-upgrade @{exec_path} flags=(attach_disconnected) {
   @{sbin}/dpkg-preconfigure        Px,
   @{sbin}/on_ac_power              Px,
   @{sbin}/sendmail                 Px,
-  @{lib}/apt/methods/http{,s}      Px,
+  @{lib}/apt/methods/*             Px,
   @{lib}/needrestart/apt-pinvoke   Px,
   @{lib}/update-notifier/update-motd-updates-available Px,
   @{lib}/zsys-system-autosnapshot  Px,

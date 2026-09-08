@@ -80,9 +80,9 @@ profile dkms @{exec_path} flags=(attach_disconnected) {
   @{lib}/os-release rix,
 
   /var/lib/dkms/**/build/** rix,
+  /var/lib/dkms/**/build/** rwk,
   /var/lib/dkms/**/configure rix,
   /var/lib/dkms/**/dkms.postbuild rix,
-  /var/lib/dkms/vboxhost/*/build/** rwk,
 
   /var/lib/shim-signed/mok/** r,
 

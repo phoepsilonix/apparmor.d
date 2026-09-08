@@ -30,11 +30,22 @@ profile claude-cowork-vm {
 
   /usr/share/qemu/{,**} r,
 
+  /etc/libnl/classid r,
+
   owner @{config_dirs}/ r,
   owner @{config_dirs}/** rwk,
 
-  owner @{run}/user/@{uid}/cowork-vm-@{int10}/qmp.sock w,
-  owner @{run}/user/@{uid}/cowork-vm-@{int10}/virtiofsd-0.sock rw,
+  owner @{run}/user/@{uid}/cowork-vm-@{int}/qmp.sock w,
+  owner @{run}/user/@{uid}/cowork-vm-@{int}/virtiofsd-0.sock rw,
+
+  @{sys}/devices/system/node/ r,
+  @{sys}/devices/system/node/node@{int}/meminfo r,
+
+  @{sys}/module/*/uevent r,
+  @{sys}/module/kvm_*/parameters/* r,
+  @{sys}/module/vhost/parameters/max_mem_regions r,
+
+  @{PROC}/sys/vm/max_map_count r,
 
   /dev/kvm rw,
   /dev/vhost-vsock rw,

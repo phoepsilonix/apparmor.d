@@ -12,6 +12,7 @@ include <tunables/global>
 profile man @{exec_path} flags=(attach_disconnected) {
   include <abstractions/base>
   include <abstractions/consoles>
+  include <abstractions/nameservice-strict>
   include <abstractions/shells>
 
   @{exec_path} mr,
@@ -65,6 +66,8 @@ profile man @{exec_path} flags=(attach_disconnected) {
 
   profile shell {
     include <abstractions/base>
+    include <abstractions/consoles>
+    include <abstractions/nameservice-strict>
     include <abstractions/shells>
 
     include if exists <local/man_shell>
@@ -73,8 +76,10 @@ profile man @{exec_path} flags=(attach_disconnected) {
   profile groff {
     include <abstractions/base>
     include <abstractions/consoles>
+    include <abstractions/nameservice-strict>
+    include <abstractions/shells>
 
-    @{sh_path}           r,
+    @{shells_path}     rix,
     @{bin}/eqn        mrix,
     @{bin}/grap       mrix,
     @{bin}/groff      mrix,

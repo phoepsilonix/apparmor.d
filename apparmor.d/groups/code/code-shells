@@ -50,6 +50,7 @@ profile code-shells flags=(attach_disconnected) {
   # them and want to allow them, event if they need more/different permissions
   # than what is allowed in this profile.
   /opt/claude-code/bin/claude    Px,
+  priority=10 @{bin}/claude      Px,
 
   owner @{config_dirs}/User/globalStorage/**/ r,
 
