@@ -168,7 +168,7 @@ profile claude @{exec_path} flags=(attach_disconnected) {
     unix (send receive) type=stream peer=(label=claude-desktop),
 
     signal receive peer=claude,
-  
+
     priority=2 @{bin}/flatpak     Px -> claude//flatpak,
     priority=2 @{bin}/git         Px -> claude//git,
     priority=2 @{bin}/scp         Px -> claude//ssh,
