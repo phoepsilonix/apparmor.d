@@ -123,6 +123,7 @@ profile dbus-system flags=(attach_disconnected) {
 
   @{att}/dev/dri/card@{int} rw,
   @{att}/dev/input/event@{int} rw,
+  @{att}/dev/pts/@{u16} rw,
   @{att}/dev/pts/ptmx rw,
 
   include if exists <local/dbus-system>
