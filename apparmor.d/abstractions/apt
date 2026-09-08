@@ -36,6 +36,7 @@
   owner @{tmp}/clearsigned.message.* rw,
 
   #aa:only test
+  #aa:lint ignore=missing-owner-qualifier
   /tmp/@{rand10}/ rw,
   /tmp/@{rand10}/** rwlkmix,
   /tmp/tmp.@{word10}/ rw,

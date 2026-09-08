@@ -15,9 +15,9 @@
   /usr/share/zsh-theme-*/{,**} r,
   /usr/share/zsh/{,**} r,
 
-  /etc/zsh/* r,
+  /etc/zsh/{,**} r,
 
-  /home/ r,
+  @{HOMEDIRS}/ r,
 
   owner @{HOME}/ r,
   owner @{HOME}/.zcompdump-* rw,

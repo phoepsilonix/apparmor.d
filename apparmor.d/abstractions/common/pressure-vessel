@@ -55,6 +55,7 @@
   # Common to all @{lib}/pressure-vessel/from-host/libexec/steam-runtime-tools-@{int}/pv-adverb
   @{sh_path}                                            rix,
   @{coreutils_path}                                      ix,
+  @{python_path}                                        rix,
   @{bin}/getopt                                          ix,
   @{bin}/gzip                                            ix,
   @{bin}/localedef                                       ix,
@@ -63,7 +64,6 @@
   @{bin}/steam-runtime-urlopen                           ix,
   @{bin}/xrandr                                          ix,
   @{bin}/zenity                                          ix,
-  @{python_path}                                        rix,
   @{run}/host/@{bin}/localedef                           ix,
   @{run}/host/@{sbin}/ldconfig                           ix,
   @{sbin}/ldconfig                                       ix,

@@ -2,6 +2,7 @@
 # Copyright (C) 2025 Alexandre Pujol <alexandre@pujol.io>
 # SPDX-License-Identifier: GPL-2.0-only
 # LOGPROF-SUGGEST: no
+#aa:lint ignore=missing-owner-qualifier
 
 # Common temporary tests directories used by autopkgtest.
 #
@@ -39,10 +40,10 @@
   /tmp/shunit.@{rand6}/ rw,
   /tmp/shunit.@{rand6}/** rwlk,
 
-  /tmp/test*/ rw,
-  priority=-1 /tmp/test*/** rwlkmix,
-  /tmp/*test*/ rw,
+              /tmp/*test*/ rw,
+              /tmp/test*/ rw,
   priority=-1 /tmp/*test*/** rwlkmix,
+  priority=-1 /tmp/test*/** rwlkmix,
 
   owner /tmp/dbusmock_data_*/{,**} rwlk,
 
