@@ -8,7 +8,7 @@ include <tunables/global>
 
 @{exec_path}  = @{lib}/drkonqi-coredump-processor
 @{exec_path} += @{lib}/@{multiarch}/{,libexec/}drkonqi-coredump-processor
-profile drkonqi-coredump-processor @{exec_path} flags=(attach_disconnected) {
+profile drkonqi-coredump-processor @{exec_path} flags=(attach_disconnected,mediate_deleted) {
   include <abstractions/base>
   include <abstractions/consoles>
   include <abstractions/journal-read>

@@ -8,7 +8,7 @@ abi <abi/5.0>,
 include <tunables/global>
 
 @{exec_path} = @{bin}/kstart
-profile kstart @{exec_path} flags=(attach_disconnected) {
+profile kstart @{exec_path} flags=(attach_disconnected,mediate_deleted) {
   include <abstractions/base>
   include <abstractions/fontconfig-cache-read>
   include <abstractions/graphics>
